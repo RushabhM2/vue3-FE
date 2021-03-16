@@ -1,6 +1,8 @@
 <template>
-  <div>Hello {{name}}</div>
-  <div v-text="channel"></div>
+  <div>Hello {{name}} {{channel}}</div>
+  <div v-html="channel"></div>
+  <h2 v-bind:id="headingId">Heading</h2>
+  <button v-bind:disabled="isDisabled">Disabled Button</button>
 </template>
 
 <script>
@@ -9,7 +11,8 @@ export default {
   data() {
     return {
       name: "Rushabh",
-      channel: "Human Motion"
+      channel: "<b>Human Motion</b>",
+      isDisabled: true
     }
   }
 }
