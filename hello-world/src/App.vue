@@ -5,6 +5,11 @@
   <button v-bind:disabled="isDisabled">Disabled Button</button>
   <h1 v-bind:class="isSoldOut ? 'new' : 'green'">Conditional rendering header</h1>
   <h2 v-bind:class="[isSoldOut ? 'new' : 'green', 'promoted']">Newly promoted movie</h2>
+  <h2 v-bind:class="{
+    promoted: isPromoted,
+    new: !isSoldOut,
+    green: isSoldOut
+  }">Newly promoted movie object</h2>
 </template>
 
 <script>
